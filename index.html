@@ -39,6 +39,30 @@
             text-align: center;
         }
 
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #888;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: #00fffc;
+        }
+
         .glitch-text {
             font-size: 3.5rem;
             font-weight: bold;
@@ -55,11 +79,34 @@
             margin-top: 1rem;
         }
 
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #00fffc;
+        }
+
+        .about-section {
+            margin: 5rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
         .games-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 4rem;
+            margin-top: 2rem;
         }
 
         .game-card {
@@ -125,6 +172,67 @@
             transform: scale(1.05);
         }
 
+        .skills-section {
+            margin: 5rem 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #00fffc;
+        }
+
+        .skill-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .contact-section {
+            margin: 5rem 0;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #00fffc;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
         @keyframes glitch {
             0% {
                 text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
@@ -174,6 +282,12 @@
             .subtitle {
                 font-size: 1.25rem;
             }
+
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -182,37 +296,60 @@
     <div class="container">
         <header>
             <h1 class="glitch-text">Gabriel Price</h1>
-            <p class="subtitle">Metroid Enthusiast</p>
+            <p class="subtitle">Game Developer & Designer</p>
         </header>
 
-        <main class="games-grid">
-            <article class="game-card">
-                <img src="metriodsplash.webp" alt="Game Screenshot" class="game-image">
-                <h2 class="game-title">Metroid Recreation</h2>
-                <div class="game-tags">
-                    <span class="tag">Action</span>
-                    <span class="tag">Platformer</span>
-                    <span class="tag">Retro</span>
-                    <span class="tag">Secrets?</span>
-                </div>
-                <p class="game-description">
-                    A recreation of the NES Metroid experience. Explore mysterious alien worlds, unlock powerful abilities, and 
-                    maybe even discover some hidden content... who knows what you might find if you 
-                    press the right button(the 4 key perhaps)?
-                    <br><br>
-                    Artwork, custom mechanic and level design by Seth Blake.
-                    <br>Custom level design and enemies built by Gabriel Price.
-                </p>
-                <p style="font-size: 0.9rem; color: #888; margin-top: 1rem;">
-                    Created by Gabriel Price & Seth Blake
-                </p>
-                <a href="https://drdolit.itch.io/metroid" class="cta-button">Play Now</a>
-            </article>
-        </main>
+
+
+        <section id="projects">
+            <h2 class="section-title">My Projects</h2>
+            <main class="games-grid">
+                <article class="game-card">
+                    <img src="metriodsplash.webp" alt="Metroid Recreation Screenshot" class="game-image">
+                    <h2 class="game-title">Metroid Recreation</h2>
+                    <div class="game-tags">
+                        <span class="tag">Action</span>
+                        <span class="tag">Platformer</span>
+                        <span class="tag">Retro</span>
+                        <span class="tag">Secrets</span>
+                    </div>
+                    <p class="game-description">
+                        A recreation of the NES Metroid experience. Explore mysterious alien worlds, unlock powerful abilities, and 
+                        maybe even discover some hidden content... who knows what you might find if you 
+                        press the right button(the 4 key perhaps)?
+                    </p>
+                    <p style="font-size: 0.9rem; color: #888; margin-top: 1rem;">
+                        Created by Gabriel Price & Seth Blake
+                    </p>
+                    <a href="https://drdolit.itch.io/metroid" class="cta-button">Play Now</a>
+                </article>
+
+                <article class="game-card">
+                    <img src="/api/placeholder/400/200" alt="Cosmic Drift Screenshot" class="game-image">
+                    <h2 class="game-title">Quantum Lite</h2>
+                    <div class="game-tags">
+                        <span class="tag">Runner</span>
+                        <span class="tag">Sci-Fi</span>
+                        <span class="tag">Science</span>
+                    </div>
+                    <p class="game-description">
+                        A zero-gravity racing game set in the far reaches of space. Pilot your craft through 
+                        treacherous asteroid fields, navigate wormholes, and outmaneuver opponents in this 
+                        high-speed sci-fi racer.
+                    </p>
+                    <p style="font-size: 0.9rem; color: #888; margin-top: 1rem;">
+                        Created by Gabriel Price
+                    </p>
+                    <a href="#" class="cta-button">Coming Soon</a>
+                </article>
+
+
+            </main>
+        </section>
+
 
         <footer>
-            <p>Gabriel Price All rights reserved.</p>
-            
+            <p>© 2025 Gabriel Price. All rights reserved.</p>
         </footer>
     </div>
 
@@ -269,6 +406,21 @@
         }
 
         animate();
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            });
+        });
 
         // Handle window resize
         window.addEventListener('resize', () => {
